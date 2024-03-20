@@ -1,0 +1,32 @@
+
+
+@if(match)
+{
+    <div class=" w-[65%]">
+
+        <div class=" 
+                    header border-b-2 pb-5 border-b-gray-500   border-b-orange-600">
+            <h1 class="font-bold">{{match.teamHeading}}</h1>
+            <p>{{match.matchNumberVenue}}</p>
+         </div>
+     
+         <div class="body mt-4">
+              <div class="flex justify-between px-2">
+                 <p class="font-bold">{{match.battingTeam}}</p>
+                 <p class="font-bold">{{match.battingTeamScore}}</p>
+              </div>
+              <div class="flex justify-between px-2">
+                 <p class="font-bold">{{match.bowlingTeam}}</p>
+                 <p class="font-bold">{{match.bowlingTeamScore}}</p>
+              </div>
+         </div>
+         <hr>
+     
+         <div class="footer mt-3 ">
+             <p style="color: red;" >{{match.liveText}}</p>
+             <p style="color:green">{{match.textComplete}}</p> 
+         </div>
+     
+     </div>
+     
+}

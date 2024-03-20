@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .news-item {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .news-title {
+            font-size: 20px;
+            color: #007BFF;
+            margin-bottom: 5px;
+        }
+
+        .news-content {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest Cricket News</h1>
+    <div id="newsContainer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchCricketNews();
+        });
+
+        function fetchCricketNews() {
+            // Placeholder URL, replace with your actual API endpoint
+            fetch('https://api.example.com/cricket/news')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayNews(data.articles); // Adjust according to the actual API response structure
+            })
+            .catch(error => console.error('Error fetching news:', error));
+        }
+
+        function displayNews(articles) {
+            const container = document.getElementById('newsContainer');
+            // Check if articles exist and is an array
+            if (Array.isArray(articles)) {
+                articles.forEach(article => {
+                    const item = document.createElement('div');
+                    item.className = 'news-item';
+                    item.innerHTML = `
+                        <h2 class="news-title">${article.title}</h2>
+                        <p class="news-content">${article.content || 'No content available.'}</p>
+                    `;
+                    container.appendChild(item);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

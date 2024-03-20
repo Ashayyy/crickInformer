@@ -1,0 +1,36 @@
+<div class="table-container">
+    <h1 class="text-4xl font-extrabold text-gray-700 ">Points Table</h1>
+
+    <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <table class =" shadow-lg w-full text-sm text-left text-white dark:text-white-200 mt-8">
+            <thead class="text-xs text-gray-300 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    @for(heading of tableHeading; track $index){
+                        <th class="py-2 px-4 border-b">{{heading}}</th>
+                    }
+                    
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(teams of pointsTable; track $index){
+                    <tr class=" bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                     
+                
+                        @if($index>0){
+                        @for(data of teams;track $index){
+                            <td class="py-4 px-6">{{data}}</td>
+                           } 
+                      }
+                        
+                      
+                    </tr>
+                }
+
+                <!-- Repeat <tr> for each row in your table -->
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>

@@ -1,0 +1,15 @@
+package com.app.service;
+
+import com.app.entities.Match;
+
+import java.Util.List;
+
+//for loose coupling
+public interface MatchService {
+   // get all matches
+	List<Match> getAllMatches();
+	// get live matches
+	
+	// get cricket ipl 2024
+	
+}

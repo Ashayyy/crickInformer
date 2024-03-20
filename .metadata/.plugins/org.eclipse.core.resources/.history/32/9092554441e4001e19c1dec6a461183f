@@ -1,0 +1,38 @@
+package com.app.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+import com.app.entities.Match;
+import com.app.repositories.MatchRepo;
+
+@Service
+public class MatchServiceIMPL implements MatchService {
+
+	private MatchRepo matchrepo;
+	
+	private MatchServiceIMPL(MatchRepo matchrepo) {
+		this.matchrepo = matchrepo;
+	}
+	
+	@Override
+	public List<Match> getAllMatches() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Match> getLiveMatchScore() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Map<String, String>> pointsTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
